@@ -1,0 +1,28 @@
+server:
+  port: 8003
+spring:
+  application:
+    name: service-vod
+  profile:
+    active: dev
+# 设置文件上传大小
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.146.131:8848
+aliyun:
+  vod:
+    file:
+      keyid: LTAI5t69USG3izt9BknMAsKS
+      keysecret: 9SanksmSMrJN5RXj0FIDCJ9Zc8jgPV
+
+ribbon:
+  ConnectTimeout: 5000 #请求连接的超时时间，默认时间为1秒
+  ReadTimeout: 5000 #请求处理的超时时间
+feign:
+  hystrix:
+    enabled: true #开启Hystrix熔断功能

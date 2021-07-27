@@ -1,0 +1,38 @@
+server:
+  port: 8004
+spring:
+  application:
+    name: service-cms
+  # 环境设置：dev、test、prod
+  profiles:
+    active: dev
+  # mysql数据库连接
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.146.131:3306/education?serverTimezone=GMT%2B8
+    username: root
+    password: root
+  #返回数据库的日期格式 !!!
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.146.131:8848
+  redis:
+    host: 192.168.146.131
+    port: 6379
+    database: 0
+    timeout: 1800000
+    lettuce:
+      pool:
+        max-active: 20
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
+
+mybatis-plus:
+  mapper-locations: classpath:com/example/educms/mapper/xml/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

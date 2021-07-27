@@ -1,0 +1,51 @@
+# 服务端口
+server:
+  port: 8007
+# 服务名
+spring:
+  application:
+    name: service-order
+  # 环境设置：dev、test、prod
+  profiles:
+    active: dev
+  # mysql数据库连接
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.146.131:3306/education?serverTimezone=GMT%2B8
+    username: root
+    password: root
+  #返回数据库的日期格式 !!!
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.146.131:8848
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:com/example/eduorder/mapper/xml/*.xml
+  type-aliases-package: com.example.eduorder.mapper
+#  global-config:
+#    db-config:
+#      logic-delete-field: flag  # 全局逻辑删除的实体字段名(since 3.3.0,配置后可以忽略不配置步骤2)
+#      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+#      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+ribbon:
+  ConnectTimeout: 5000 #请求连接的超时时间，默认时间为1秒
+  ReadTimeout: 5000 #请求处理的超时时间
+feign:
+  hystrix:
+    enabled: true #开启Hystrix熔断功能
+
+weixin:
+  pay:
+    #关联的公众号appid
+    appid: wx74862e0dfcf69954
+    #商户号
+    partner: 1558950191
+    #商户key
+    partnerkey: T6m9iK73b0kn9g5v426MKfHQH7X8rKwb
+    #回调地址
+    notifyurl: http://guli.shop/api/order/weixinPay/weixinNotify

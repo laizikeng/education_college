@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: service-oss
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.146.131:8848
+
+aliyun:
+  oss:
+    file:
+      endpoint: oss-cn-beijing.aliyuncs.com
+      keyid: LTAI5t69USG3izt9BknMAsKS
+      keysecret: 9SanksmSMrJN5RXj0FIDCJ9Zc8jgPV
+      bucketname: guli-college-for-june
+server:
+  port: 8002
