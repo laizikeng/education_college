@@ -140,21 +140,21 @@
 
 # 模块说明
 
-education_parent
-|- common                                 || 公共模块
-	|- utils                                     || 存放各种工具
-	|- base                                    || 全局bean，全局设置等
-	|- spring_security                  || spring_security专用设置, 与service_acl模块相连
-|- infrastructure                        || 微服务api网关
-|- service									
-	|- service_edu                         || 提供主要服务api接口
-	|- service_oss                          || 文件上传至阿里云oss
-	|- service_vod                          || 视频点播，上传至阿里云oss
-	|- service_cms                         || 控制前台首页数据
-	|- service_center                     || 用户登录注册模块
-	|- service_order                      || 订单模块
-	|- service_statistic                  || 统计模块
-	|- service_acl                           || 后台管理权限控制
+	|- education_parent
+		|- common			|| 公共模块
+			|- utils			|| 存放各种工具
+			|- base				|| 全局bean，全局设置等
+			|- spring_security		|| spring_security专用设置, 与service_acl模块相连
+		|- infrastructure		|| 微服务api网关
+		|- service			|| 微服务模块									
+			|- service_edu			|| 提供主要服务api接口
+			|- service_oss                  || 文件上传至阿里云oss
+			|- service_vod			|| 视频点播，上传至阿里云oss
+			|- service_cms			|| 控制前台首页数据
+			|- service_center		|| 用户登录注册模块
+			|- service_order		|| 订单模块
+			|- service_statistic		|| 统计模块
+			|- service_acl			|| 后台管理权限控制
 
 
 
